@@ -3,12 +3,15 @@
 try {
     const res = await fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature")
     const data = await res.json()
-    document.body.style.backgroundImage = `url(${data.urls.regular})`
+    console.log(data)
+    document.body.style.backgroundImage = `url(${data.urls.full})`
     document.getElementById("author").textContent = `By: ${data.user.name}`
+    document.getElementById("location").textContent = data?.location?.name ? `Location: ${data.location.name}` : `Location not available`
 } catch (err) {
     document.body.style.backgroundImage = `url(https://images.unsplash.com/photo-1560008511-11c63416e52d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTEwMjl8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjI4NDIxMTc&ixlib=rb-1.2.1&q=80&w=1080
 )`
     document.getElementById("author").textContent = `By: Dodi Achmad`
+    
 }
 
 
@@ -46,6 +49,7 @@ navigator.geolocation.getCurrentPosition(async position => {
         }
         const data = await res.json()
         const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+        console.log(iconUrl)
         document.getElementById("weather").innerHTML = `
             <img src=${iconUrl} />
             <p class="weather-temp">${Math.round(data.main.temp)}º</p>

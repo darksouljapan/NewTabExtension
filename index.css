@@ -6,9 +6,11 @@ body {
     margin: 0;
     background: no-repeat center center fixed;
     background-size: cover;
+    background-color: rgb(0, 0, 0, 0.2);
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     text-shadow: 0px 0px 20px #242424;
+    background-blend-mode: multiply;
 }
 
 main {
@@ -25,8 +27,12 @@ div.top {
 }
 
 h1.time {
-    text-align: center;
+    display: flex;
+    align-self: center;
+    padding: 1rem 2rem;
     font-size: 5rem;
+    border: .5rem solid whitesmoke;
+    border-radius: 8rem;
 }
 
 div#crypto {
@@ -71,9 +77,47 @@ p.weather-city {
 p.weather-temp {
     margin: 0;
     font-size: 1.7rem;
+    font-weight: 700;
     margin-left: -10px;
 }
 
 p#author {
     font-size: 1rem;
+}
+
+.img-info {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.img-info-link {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+#location {
+
+    text-align: right;
+}
+
+#photo-url{
+
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid whitesmoke;
+    border-radius: 2.0rem;
+    padding: 0.8rem 1rem;
+    line-height: 0;    
+}
+
+#photo-url:hover {
+
+    background-color: rgb(238, 238, 238);
+    color: #242424;
 }
