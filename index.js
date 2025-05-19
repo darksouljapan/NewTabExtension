@@ -7,6 +7,7 @@ try {
     document.body.style.backgroundImage = `url(${data.urls.full})`
     document.getElementById("author").textContent = `By: ${data.user.name}`
     document.getElementById("location").textContent = data?.location?.name ? `Location: ${data.location.name}` : `Location not available`
+    document.getElementById("photo-url").href = `${data.links.html}`
 } catch (err) {
     document.body.style.backgroundImage = `url(https://images.unsplash.com/photo-1560008511-11c63416e52d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMTEwMjl8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjI4NDIxMTc&ixlib=rb-1.2.1&q=80&w=1080
 )`
